@@ -131,10 +131,6 @@ body {
     justify-content: center;
 }
 
-.headerContent .searchBarContainer .searchButton img {
-    width: 22px
-}
-
 .tabsContainer {
     margin-left: 150px;
 }

@@ -83,9 +83,8 @@ if (isset($_GET["type"])) {
             echo $resultsProvider->getResultsHtml(1, 20, $term);
             ?>
         </div>
+
     </div>
-
-
 
 </body>
 </html>
