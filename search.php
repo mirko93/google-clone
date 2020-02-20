@@ -74,13 +74,13 @@ if (isset($_GET["type"])) {
 <!--        search results-->
         <div class="mainResultsSection">
             <?php
-            $resultProvider = new SiteResultsProvider($con);
+            $resultsProvider = new SiteResultsProvider($con);
 
-            $numResults = $resultProvider->getNumResults($term);
+            $numResults = $resultsProvider->getNumResults($term);
 
             echo "<p class='resultsCount'>$numResults results found</p>";
-
-            echo $resultProvider->getResultsHtml(1, 20, $term);
+            
+            echo $resultsProvider->getResultsHtml(1, 20, $term);
             ?>
         </div>
     </div>
