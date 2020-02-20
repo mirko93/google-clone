@@ -1,4 +1,6 @@
 <?php
+include("config.php");
+include("classes/SiteResultsProvider.php");
 
 if (isset($_GET["term"])) {
     $term = $_GET["term"];
@@ -12,7 +14,6 @@ if (isset($_GET["type"])) {
     $type = "sites";
 }
 
-
 ?>
 
 <!doctype html>
@@ -22,7 +23,8 @@ if (isset($_GET["type"])) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Welcome to Google</title>
+
+    <title>Google</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -66,6 +68,20 @@ if (isset($_GET["type"])) {
                     </li>
                 </ul>
             </div>
+        </div>
+
+
+<!--        search results-->
+        <div class="mainResultsSection">
+            <?php
+            $resultProvider = new SiteResultsProvider($con);
+
+            $numResults = $resultProvider->getNumResults($term);
+
+            echo "<p class='resultsCount'>$numResults results found</p>";
+
+            echo $resultProvider->getResultsHtml(1, 20, $term);
+            ?>
         </div>
     </div>
 
