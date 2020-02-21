@@ -33,6 +33,12 @@ if (isset($_GET["page"])) {
     <title>Google</title>
 
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous">
+    </script>
 </head>
 <body>
 
@@ -140,6 +146,8 @@ if (isset($_GET["page"])) {
         </div>
 
     </div>
+
+    <script src="assets/js/script.js"></script>
 
 </body>
 </html>
